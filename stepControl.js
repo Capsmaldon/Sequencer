@@ -28,11 +28,17 @@ for(var i = 0; i < 4; ++i)
     sliders[i].max = 127;
     
     sliders[i].addEventListener("input", stepSliderControl);
+    sliders[i].addEventListener("touchstart", stopScrolling);
     sliderTagDisplayBox[sliderIndex].appendChild(sliderDisplay[sliderIndex]);
     sliderTagDisplayBox[sliderIndex].appendChild(sliderTag[sliderIndex]);
     sliderContainers[sliderIndex].appendChild(sliderTagDisplayBox[sliderIndex]);
     sliderContainers[sliderIndex].appendChild(sliders[sliderIndex]);
     localPanel.appendChild(sliderContainers[sliderIndex]);
+}
+
+function stopScrolling(event)
+{
+    event.preventDefault();
 }
 
 /*Set the defaults for each slider*/
