@@ -27,8 +27,8 @@ for(var i = 0; i < 4; ++i)
     sliders[i].value = 0;
     sliders[i].max = 127;
     
-    sliders[i].addEventListener("input", stepSliderControl); 
-    
+    sliders[i].addEventListener("input", stepSliderControl);
+    sliders[i].addEventListener("touchstart", stopScroll);
     sliderTagDisplayBox[sliderIndex].appendChild(sliderDisplay[sliderIndex]);
     sliderTagDisplayBox[sliderIndex].appendChild(sliderTag[sliderIndex]);
     sliderContainers[sliderIndex].appendChild(sliderTagDisplayBox[sliderIndex]);
@@ -60,11 +60,14 @@ sliders[3].max = 100;
 sliders[3].value = step[0].drumChance;
 sliders[3].tag = SliderEnum.DRUM_CHANCE;
 
+function startScroll(event)
+{
+    event.preventDefault();
+}
+
 //Slider change
 function stepSliderControl(event)
 {
-    event.preventDefault();
-    
     switch(event.target.tag)
     {
         case SliderEnum.SYNTH_VELOCITY:
