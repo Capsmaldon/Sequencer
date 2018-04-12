@@ -63,6 +63,8 @@ sliders[3].tag = SliderEnum.DRUM_CHANCE;
 //Slider change
 function stepSliderControl(event)
 {
+    event.preventDefault();
+    
     switch(event.target.tag)
     {
         case SliderEnum.SYNTH_VELOCITY:
