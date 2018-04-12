@@ -36,12 +36,7 @@ for(var i = 0; i < 4; ++i)
     localPanel.appendChild(sliderContainers[sliderIndex]);
 }
 
-localPanel.addEventListener("touchstart", stopScrolling);
-
-function stopScrolling(event)
-{
-    event.preventDefault();
-}
+document.ontouchstart = stopScrollingMain(e){ e.preventDefault(); }
 
 /*Set the defaults for each slider*/
 sliderTag[0].innerHTML = "Velocity";
