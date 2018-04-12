@@ -1,0 +1,258 @@
+body
+{
+    width: 200%; /* (100 * numOfPages) */
+    background-color: rgb(60,60,60);
+    display: flex;
+}
+.pageDiv
+{
+    width:95%;
+    margin: 2.5%;
+}
+
+[class*="ControlPanel-"]
+{
+    background-color: rgb(80,80,80);
+    display: flex;
+    margin: 1%;
+    padding: 1%;
+    -webkit-flex-flow: column;
+}
+
+[class*="PanelRow-"]
+{
+    display: flex;
+    width: 100%;
+}
+
+[class*="PanelColumn-"]
+{
+    display: flex;
+    width: 100%;
+    Align-items: flex-start;
+}
+
+.PanelRow-Horizontal
+{
+    -webkit-flex-flow: row;
+}
+.PanelRow-Vertical
+{
+    -webkit-flex-flow: column;
+}
+
+.ControlPanel-Steps
+{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    width: 89%;
+}
+.ControlPanel-SequenceTypes
+{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    width: 11%;
+}
+
+.ControlPanel-Local
+{
+    min-width: 0;
+    overflow: hidden;
+    width: 46%; /* 50 - (Padding*2 + Margin*2) = 36% */
+}
+.ControlPanel-Global
+{
+    width: 46%; /* 50 - (Padding*2 + Margin*2) */
+}
+.ControlPanel-Synth
+{
+    width: 46%; /* 50 - (Padding*2 + Margin*2) */
+}
+
+.RangeSliderContainer
+{
+    display: flex;
+    width: 100%;
+    -webkit-flex-flow: column;
+    flex: 1;
+}
+
+.RangeSliderTag
+{
+/*    width: 10%;*/
+
+    color: rgb(220,220,220);
+    font-family: "Arial", "Sans-serif";
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.RangeSliderDisplay
+{
+    float: right;
+    width: 50px;
+    height: 20px;
+    margin-bottom: 10px;
+    color: rgb(40,40,40);
+    background-color: rgb(220,220,220);
+    text-align: center;
+    font-family: "Arial", "Sans-serif";
+    font-weight: bold;
+}
+.RangeSliderTag&DisplayBox
+{
+}
+.RangeSlider
+{
+    flex: 1;
+    -webkit-appearance: none;
+    appearance: none;
+    height: 5px;
+    margin-bottom: 20px;
+    background: rgb(40,40,40);
+    outline: none;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+.RangeSlider:hover
+{
+    background: rgb(50,50,50);
+}
+.RangeSlider::-webkit-slider-thumb
+{
+    -webkit-appearance: none;
+    appearance: none;
+    width: 30px;
+    height: 20px;
+    border-radius: 20%;
+    background: radial-gradient(rgb(200,200,200), rgb(150,150,200));
+    cursor: pointer;
+}
+
+.StepGroup
+{
+    display: flex;
+    width: 100%;
+}
+
+[class*="StepButton-"]
+{
+    /* display:inline-block; /* better than float:left; but redundany with flexbox */
+    padding-top: 10%; /* size of buttons */
+    border-width: 5px;
+    border-radius: 10%; /* round all the edges */
+    border-style: outset;
+    margin:1px; /* add margins to fill the box when expanded */
+    outline: none; /* Remove the annoying blue glow */
+    flex: 1; /* stretch to fill remaining space in flexbox */
+    transition-duration: 0.3s;
+}
+
+.StepButton-SynthOff
+{
+    background: radial-gradient(rgb(150,50,220), rgb(100,10,180));
+    border-color: rgb(40,40,40);
+}
+
+.StepButton-SynthOff:hover
+{
+    border-color: rgb(40,180,40);
+}
+
+.StepButton-SynthOn
+{
+    background: radial-gradient(rgb(200,200,200), rgb(150,100,200));
+    border-color: rgb(120,120,120);
+}
+.StepButton-DrumOff
+{
+    background: radial-gradient(rgb(50,50,255), rgb(10,10,200));
+    border-color: rgb(40,40,40);
+}
+
+.StepButton-DrumOff:hover
+{
+    border-color: rgb(40,180,40);
+}
+
+.StepButton-DrumOn
+{
+    background: radial-gradient(rgb(200,200,200), rgb(150,150,200));
+    border-color: rgb(120,120,120);
+}
+.StepButton-DrumOn:hover
+{
+    border-color: rgb(40,180,40);
+}
+.StepButton-Selected
+{
+    border-color: rgb(40,180,40);
+}
+.StepButton-Selected:hover
+{
+    border-color: rgb(60,210,60);
+}
+.StepButton-IndicatorOff
+{
+    background: radial-gradient(rgb(50,50,255), rgb(10,10,200));
+    border-color: rgb(40,40,40);
+}
+.StepButton-IndicatorOn
+{
+    background: radial-gradient(rgb(200,200,200), rgb(150,150,200));
+    border-color: rgb(120,120,120);
+}
+.StepButton-SequenceTypeSynth
+{
+    background: radial-gradient(rgb(150,50,255), rgb(100,10,200));
+    border-color: rgb(40,40,40);
+}
+.StepButton-SequenceTypeSynth:hover
+{
+    border-color: rgb(40,180,40);
+}
+.StepButton-SequenceTypeDrum
+{
+    background: radial-gradient(rgb(50,50,255), rgb(10,10,200));
+    border-color: rgb(40,40,40);
+}
+.StepButton-SequenceTypeDrum:hover
+{
+    border-color: rgb(40,180,40);
+}
+
+
+[class*="StartStopButton-"]
+{
+    padding-top: 10%; /* size of buttons */
+    border-width: 5px;
+    border-radius: 10%; /* round all the edges */
+    border-style: outset;
+    margin:1px; /* add margins to fill the box when expanded */
+    outline: none; /* Remove the annoying blue glow */
+    flex: 1; /* stretch to fill remaining space in flexbox */
+    transition-duration: 0.3s;
+    text-align: center;
+    color: rgb(220,220,220);
+    font-size: 100%;
+    font-weight: bold;
+    font-family: "Arial", "Sans-serif";
+}
+
+.StartStopButton-Off
+{
+    background: radial-gradient(rgb(50,150,50), rgb(10,100,10));
+    border-color: rgb(40,40,40);
+}
+.StartStopButton-Off:hover
+{
+    border-color: rgb(40,180,40);
+}
+.StartStopButton-On
+{
+    background: radial-gradient(rgb(200,50,50), rgb(150,10,10));
+    border-color: rgb(120,120,120);
+}
+.StartStopButton-On:hover
+{
+    border-color: rgb(40,180,40);
+}
