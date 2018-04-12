@@ -101,4 +101,3 @@ function stepSliderControl(event)
             break;
     }
 }
-
