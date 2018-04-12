@@ -28,7 +28,7 @@ for(var i = 0; i < 4; ++i)
     sliders[i].max = 127;
     
     sliders[i].addEventListener("input", stepSliderControl);
-    sliderContainers[i].addEventListener("touchstart", stopScroll);
+//     sliders[i].addEventListener("touchstart", stopScroll);
     
     sliderTagDisplayBox[sliderIndex].appendChild(sliderDisplay[sliderIndex]);
     sliderTagDisplayBox[sliderIndex].appendChild(sliderTag[sliderIndex]);
