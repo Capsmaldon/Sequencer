@@ -61,10 +61,10 @@ sliders[3].max = 100;
 sliders[3].value = step[0].drumChance;
 sliders[3].tag = SliderEnum.DRUM_CHANCE;
 
-function stopScroll(event)
-{
-    event.preventDefault();
-}
+// function stopScroll(event)
+// {
+//     event.preventDefault();
+// }
 
 //Slider change
 function stepSliderControl(event)
