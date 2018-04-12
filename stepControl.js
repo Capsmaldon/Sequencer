@@ -36,6 +36,10 @@ for(var i = 0; i < 4; ++i)
     localPanel.appendChild(sliderContainers[sliderIndex]);
 }
 
+document.ontouchmove = function(e){ 
+    e.preventDefault(); 
+}
+
 /*Set the defaults for each slider*/
 sliderTag[0].innerHTML = "Velocity";
 sliderDisplay[0].innerHTML = step[0].drumVelocity;
