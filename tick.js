@@ -1,5 +1,3 @@
-/*Currently the synth's not playing - I just switched around default values - most notably the sliders that display on startup in stepControl.js*/
-
 function triggerSynths(tick)
 {
     var drumStack = [];
