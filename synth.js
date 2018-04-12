@@ -60,26 +60,33 @@ sliderTag[11].innerHTML = "Param4";
 
 function synthSliderControl(event)
 {
- //Working on this - sliders are very disorganised
+    
     switch(event.target.tag)
     {
-        case SliderEnum.FM_ENV_ATTACK:
-        sliderDisplay[SliderEnum.FM_ENV_ATTACK].innerHTML = event.target.value;
+        case SliderDisplayEnum.FM_ENV_ATTACK:
+            sliderDisplay[SliderDisplayEnum.FM_ENV_ATTACK].innerHTML = event.target.value;
             console.log(event.target.value);
             break;
-        case SliderEnum.FM_ENV_DECAY:
+        case SliderDisplayEnum.FM_ENV_DECAY:
+            sliderDisplay[SliderDisplayEnum.FM_ENV_DECAY].innerHTML = event.target.value;
             break;
-        case SliderEnum.FM_ENV_SUSTAIN:
+        case SliderDisplayEnum.FM_ENV_SUSTAIN:
+            sliderDisplay[SliderDisplayEnum.FM_ENV_SUSTAIN].innerHTML = event.target.value;
             break;
-        case SliderEnum.FM_ENV_RELEASE:
+        case SliderDisplayEnum.FM_ENV_RELEASE:
+            sliderDisplay[SliderDisplayEnum.FM_ENV_RELEASE].innerHTML = event.target.value;
             break;
-        case SliderEnum.FM_MODENV_ATTACK:
+        case SliderDisplayEnum.FM_MODENV_ATTACK:
+            sliderDisplay[SliderDisplayEnum.FM_MODENV_ATTACK].innerHTML = event.target.value;
             break;
-        case SliderEnum.FM_MODENV_DECAY:
+        case SliderDisplayEnum.FM_MODENV_DECAY:
+            sliderDisplay[SliderDisplayEnum.FM_MODENV_DECAY].innerHTML = event.target.value;
             break;
-        case SliderEnum.FM_MODENV_SUSTAIN:
+        case SliderDisplayEnum.FM_MODENV_SUSTAIN:
+            sliderDisplay[SliderDisplayEnum.FM_MODENV_SUSTAIN].innerHTML = event.target.value;
             break;
-        case SliderEnum.FM_MODENV_RELEASE:
+        case SliderDisplayEnum.FM_MODENV_RELEASE:
+            sliderDisplay[SliderDisplayEnum.FM_MODENV_RELEASE].innerHTML = event.target.value;
             break;
     }
 }
