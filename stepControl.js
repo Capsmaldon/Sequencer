@@ -39,7 +39,7 @@ for(var i = 0; i < 4; ++i)
 /*Set the defaults for each slider*/
 sliderTag[0].innerHTML = "Velocity";
 sliderDisplay[0].innerHTML = step[0].drumVelocity;
-sliders[0].max = 127;
+sliders[0].max = 100;
 sliders[0].value = step[0].drumVelocity;
 sliders[0].tag = SliderEnum.DRUM_VELOCITY;
 

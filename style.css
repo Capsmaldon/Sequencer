@@ -1,7 +1,8 @@
 body
 {
-    width: 99%; /* (100 * numOfPages) */
+    width: 99%; /* This is so the scroll bar doesn't appear */
     background-color: rgb(60,60,60);
+    overflow-x: hidden;
 /*    display: flex;*/
 }
 .pageDiv

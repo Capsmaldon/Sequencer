@@ -15,9 +15,9 @@ function triggerSynths(tick)
             {
                 var note  = parseInt(step[stepNum].synthPitch) + (parseInt(step[stepNum].synthOctave) * 12);
                 console.log(note);
-                var velocity = (Math.pow((127 - step[stepNum].synthVelocity), 1.2)*0.1) * -1;
+                var velocity = (Math.pow((100 - step[stepNum].synthVelocity), 1.2)*0.1) * -1;
                 var frequency = Tone.Frequency().midiToFrequency(note);
-                synth[i].volume.value = velocity;
+                synth[i].volume.value = velocity + parseFloat(global_Synth_Level) + parseFloat(global_Master_Level);
                 synth[i].setNote(note);
                 synth[i].triggerAttackRelease(frequency);
             }
@@ -55,10 +55,10 @@ function triggerSynths(tick)
                 thinnedDrumStack[i].chance > thinnedDrumStack[i].randomInt)
             {
                 // Power 1.2 maps the velocity sightly better
-                var velocity = (Math.pow((127 - thinnedDrumStack[i].velocity), 1.2)*0.1) * -1;
-                sampler[thinnedDrumStack[i].type].volume.value = velocity;
+                var velocity = (Math.pow((100 - thinnedDrumStack[i].velocity), 1.2)*0.1) * -1;
+                sampler[thinnedDrumStack[i].type].volume.value = velocity + parseFloat(global_Drum_Level) + parseFloat(global_Master_Level);
                 sampler[thinnedDrumStack[i].type].start();
-                console.log(velocity);
+                console.log(sampler[thinnedDrumStack[i].type].volume.value);
             }
         }
         drumsEnabled = 0;

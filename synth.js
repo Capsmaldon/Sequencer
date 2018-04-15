@@ -5,6 +5,7 @@ for(var i = 0; i < numOfRows; ++i)
 {
     synth.push(new Tone.FMSynth());
     synth[i].mute = true;
+//    synth[i].modulation.type = "square";
     synth[i].toMaster();
     synth[i].modulationEnvelope.attack = 0.01;
 }
@@ -34,11 +35,12 @@ for (var synthPanelNum = 0; synthPanelNum < 2; ++synthPanelNum)
         sliderTag[sliderIndex].className = "RangeSliderTag";
         sliders[sliderIndex].className = "RangeSlider";
         sliderDisplay[sliderIndex].className = "RangeSliderDisplay";
-        sliderDisplay[sliderIndex].innerHTML = 0;
+        sliderDisplay[sliderIndex].innerHTML = 1;
         sliders[sliderIndex].type = "range";
         sliders[sliderIndex].tag = sliderIndex;
-        sliders[sliderIndex].value = 0;
-        sliders[sliderIndex].max = 127;
+        sliders[sliderIndex].value = 1;
+        sliders[sliderIndex].min = 1;
+        sliders[sliderIndex].max = 100;
         
         sliders[sliderIndex].addEventListener("input", synthSliderControl);
         
@@ -64,6 +66,7 @@ synthPanelContainer.appendChild(synthPanel[1]);
 
 function synthSliderControl(event)
 {
+    var value = (event.target.value/4)/100;
     
     switch(event.target.tag)
     {
@@ -71,42 +74,42 @@ function synthSliderControl(event)
             sliderDisplay[SliderDisplayEnum.FM_ENV_ATTACK].innerHTML = event.target.value;
             for (var i = 0; i < numOfRows; ++i)
             {
-                synth[i].envelope.attack = event.target.value/127;
+                synth[i].envelope.attack = value*2;
             }
             break;
         case SliderDisplayEnum.FM_ENV_DECAY:
             sliderDisplay[SliderDisplayEnum.FM_ENV_DECAY].innerHTML = event.target.value;
             for (var i = 0; i < numOfRows; ++i)
             {
-                synth[i].envelope.decay = event.target.value/127;
+                synth[i].envelope.decay = value;
             }
             break;
         case SliderDisplayEnum.FM_ENV_SUSTAIN:
             sliderDisplay[SliderDisplayEnum.FM_ENV_SUSTAIN].innerHTML = event.target.value;
             for (var i = 0; i < numOfRows; ++i)
             {
-                synth[i].envelope.sustain = event.target.value/127;
+                synth[i].envelope.sustain = value*4;
             }
             break;
         case SliderDisplayEnum.FM_MODENV_ATTACK:
             sliderDisplay[SliderDisplayEnum.FM_MODENV_ATTACK].innerHTML = event.target.value;
             for (var i = 0; i < numOfRows; ++i)
             {
-                synth[i].modulationEnvelope.attack = event.target.value/127;
+                synth[i].modulationEnvelope.attack = value;
             }
             break;
         case SliderDisplayEnum.FM_MODENV_DECAY:
             sliderDisplay[SliderDisplayEnum.FM_MODENV_DECAY].innerHTML = event.target.value;
             for (var i = 0; i < numOfRows; ++i)
             {
-                synth[i].modulationEnvelope.decay = event.target.value/127;
+                synth[i].modulationEnvelope.decay = value;
             }
             break;
         case SliderDisplayEnum.FM_MODENV_SUSTAIN:
             sliderDisplay[SliderDisplayEnum.FM_MODENV_SUSTAIN].innerHTML = event.target.value;
             for (var i = 0; i < numOfRows; ++i)
             {
-                synth[i].modulationEnvelope.sustain = event.target.value/127;
+                synth[i].modulationEnvelope.sustain = value*4;
             }
             break;
     }

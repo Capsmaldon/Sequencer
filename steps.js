@@ -19,11 +19,11 @@ for (var y = 0; y < numOfRows; ++y)
         step[stepNum].tag = x+(y*stepsPerRow);
         step[stepNum].instrument = 1;
         step[stepNum].state = 0;
-        step[stepNum].synthVelocity = 58;
+        step[stepNum].synthVelocity = 80;
         step[stepNum].synthPitch = 5;
         step[stepNum].synthOctave = 2;
         step[stepNum].synthChance = 100;
-        step[stepNum].drumVelocity = 58;
+        step[stepNum].drumVelocity = 80;
         step[stepNum].drumType = 0;
         step[stepNum].drumChance = 100;
         
@@ -109,7 +109,7 @@ function getStepSliders(stepSelected)
         {
             sliderTag[0].innerHTML = "Velocity";
             sliderDisplay[0].innerHTML = step[stepSelected].synthVelocity;
-            sliders[0].max = 127;
+            sliders[0].max = 100;
             sliders[0].value = step[stepSelected].synthVelocity;
             sliders[0].tag = SliderEnum.SYNTH_VELOCITY;
             
@@ -137,7 +137,7 @@ function getStepSliders(stepSelected)
         {
             sliderTag[0].innerHTML = "Velocity";
             sliderDisplay[0].innerHTML = step[stepSelected].drumVelocity;
-            sliders[0].max = 127;
+            sliders[0].max = 100;
             sliders[0].value = step[stepSelected].drumVelocity;
             sliders[0].tag = SliderEnum.DRUM_VELOCITY;
             

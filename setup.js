@@ -13,7 +13,7 @@ page[1].className = "pageDiv";
 var stepsPerRow = 8;
 var numOfRows = 4;
 var numOfDrumSamples = 4;
-var ms = 1500; // Default ms delay for clock.js (1500ms = 40BPM)
+var ms = 750; // Default ms delay for clock.js (750ms = 20BPM)
 
 //Containers for the data of each step
 var stepGroup = []; // A step group is a row of steps
@@ -29,6 +29,9 @@ var sliders = [];
 // This is the unique tag that every slider has
 var SliderEnum = {
     BPM : 0,
+    DRUM_LEVEL : 1,
+    SYNTH_LEVEL : 2,
+    MASTER_LEVEL : 3,
     SYNTH_VELOCITY : 1,
     SYNTH_PITCH : 2,
     SYNTH_OCTAVE : 3,
@@ -47,6 +50,9 @@ var SliderEnum = {
 //This is the actual slider number that is associated with the property, some sliders are changed when a different type of step is selected
 var SliderDisplayEnum = {
     BPM : 0,
+    DRUM_LEVEL : 1,
+    SYNTH_LEVEL : 2,
+    MASTER_LEVEL : 3,
     SYNTH_VELOCITY : 1,
     SYNTH_PITCH : 2,
     SYNTH_OCTAVE : 3,
@@ -61,6 +67,10 @@ var SliderDisplayEnum = {
     FM_MODENV_DECAY: 8,
     FM_MODENV_SUSTAIN: 9,
 }
+
+var global_Drum_Level = 0;
+var global_Synth_Level = 0;
+var global_Master_Level = 0;
 
 //Replaces numbers with actual names of pitches/types to make it easier for the user to use
 var DrumName = ["Kick", "Snare", "HH-C", "HH-O"];
