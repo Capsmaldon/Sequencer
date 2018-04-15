@@ -14,5 +14,4 @@ panel[2].appendChild(localPanel);
 panel[2].appendChild(globalPanel);
 page[0].appendChild(panel[2]);
 
-page[1].appendChild(synthPanel[0]);
-page[1].appendChild(synthPanel[1]);
+page[1].appendChild(synthPanelContainer);

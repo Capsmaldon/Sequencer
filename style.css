@@ -1,8 +1,8 @@
 body
 {
-    width: 200%; /* (100 * numOfPages) */
+    width: 100%; /* (100 * numOfPages) */
     background-color: rgb(60,60,60);
-    display: flex;
+/*    display: flex;*/
 }
 .pageDiv
 {

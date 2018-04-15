@@ -21,7 +21,7 @@ for (var y = 0; y < numOfRows; ++y)
         step[stepNum].state = 0;
         step[stepNum].synthVelocity = 58;
         step[stepNum].synthPitch = 5;
-        step[stepNum].synthOctave = 5;
+        step[stepNum].synthOctave = 2;
         step[stepNum].synthChance = 100;
         step[stepNum].drumVelocity = 58;
         step[stepNum].drumType = 0;
@@ -121,7 +121,8 @@ function getStepSliders(stepSelected)
             
             sliderContainers[2].style.visibility = "visible";
             sliderDisplay[2].innerHTML = step[stepSelected].synthOctave;
-            sliders[2].max = 11;
+            sliders[2].min = 1;
+            sliders[2].max = 8;
             sliders[2].value = step[stepSelected].synthOctave;
             sliders[2].tag = SliderEnum.SYNTH_OCTAVE;
             
