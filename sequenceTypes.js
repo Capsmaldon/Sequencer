@@ -1,3 +1,8 @@
+/*
+ The vertical strip of buttons below the stop/start
+ button controls the instrument type (synth/drums)
+ */
+
 var sequenceTypePanel = document.createElement("div");
 sequenceTypePanel.className = "ControlPanel-SequenceTypes";
 

@@ -1,5 +1,8 @@
-
-
+/*
+ The core of the sequencer - instructions to
+ control when to 'tick' the sequencer,
+ the indicator is also controlled here
+*/
 var prevTick = stepsPerRow -1;
 var tick = 0;
 

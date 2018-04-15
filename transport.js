@@ -2,9 +2,18 @@
 var globalPanel = document.createElement("div");
 globalPanel.className = "ControlPanel-Global";
 
-//New method - fitting every element needed for the slider into a single array - It works! Would've done everything this way if I'd have known earlier
-
+/*
+ New method - fitting every element needed
+ for the slider into a single array - It works!
+ Would've done everything this way if I'd have
+ known earlier
+ */
 var transportSliders = [];
+
+/*
+ Create all the visual elements and push
+ them to their respective control panel
+ */
 for (var i = 0; i < 4; ++i)
 {
     transportSliders.push(document.createElement("div"));
@@ -31,12 +40,11 @@ for (var i = 0; i < 4; ++i)
     globalPanel.appendChild(transportSliders[i].sliderContainer);
 }
 
-
-
+/*Set the defaults for each slider*/
 transportSliders[0].slider.tag = SliderEnum.BPM;
 transportSliders[0].slider.type = "range";
 transportSliders[0].sliderTag.innerHTML = "BPM";
-transportSliders[0].sliderDisplay.innerHTML = 40;
+transportSliders[0].sliderDisplay.innerHTML = 20;
 transportSliders[0].slider.min = 20;
 transportSliders[0].slider.max = 200;
 transportSliders[0].slider.value = 0;
@@ -57,7 +65,6 @@ transportSliders[2].slider.min = -30;
 transportSliders[2].slider.max = 0;
 transportSliders[2].slider.value = 0;
 
-// This is an ugly hack that fixes the layout, but it has pretty much no reprocussions
 transportSliders[3].slider.tag = SliderEnum.MASTER_LEVEL;
 transportSliders[3].slider.type = "range";
 transportSliders[3].sliderTag.innerHTML = "Master Level";
@@ -66,6 +73,11 @@ transportSliders[3].slider.min = -30;
 transportSliders[3].slider.max = 0;
 transportSliders[3].slider.value = 0;
 
+/*
+ Slider change - alters level/bpm based on slider input,
+ level alterations get stored in global variables
+ for use in tick.js
+ */
 function transportSliderControl(event)
 {
     switch (event.target.tag)
@@ -89,7 +101,4 @@ function transportSliderControl(event)
             transportSliders[SliderEnum.MASTER_LEVEL].sliderDisplay.innerHTML = event.target.value + "dB";
             break;
     }
-    
 }
-
-

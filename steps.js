@@ -1,3 +1,8 @@
+/*
+ This is where the steps are created and the behaviour is definted
+ */
+
+
 //Step setup
 var stepPanel = document.createElement("div");
 stepPanel.className = "ControlPanel-Steps";
@@ -5,6 +10,11 @@ stepPanel.className = "ControlPanel-Steps";
 panel.push(document.createElement("div"));
 panel[1].className = "PanelRow-Horizontal";
 
+/*
+ Create all the visual elements and push them to their
+ respective control panel Steps are stored in a step
+ group - a row, and then pushed to the step panel
+ */
 for (var y = 0; y < numOfRows; ++y)
 {
     stepGroup.push(document.createElement("div"));
@@ -35,7 +45,7 @@ for (var y = 0; y < numOfRows; ++y)
     stepPanel.appendChild(stepGroup[y]);
 }
 
-//Single click - step
+//Single click - 'selects' the step
 var stepSelected = 0;
 function select(event)
 {
@@ -70,7 +80,7 @@ function select(event)
     getStepSliders(stepSelected);
 }
 
-//Double click
+//Double click - toggles the step
 function toggle(event)
 {
     var stepNum = event.target.tag;
@@ -103,6 +113,11 @@ function toggle(event)
     }
 }
 
+/*
+ This gets the information for the corresponding step,
+ altering the controls available to the user if the step
+ selected is either a synthesiser or a drum step
+ */
 function getStepSliders(stepSelected)
 {
         if(step[stepSelected].instrument == 0)

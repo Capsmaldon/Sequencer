@@ -1,3 +1,14 @@
+/*
+ Where global variables tend to be kept,
+ often things that are used in multiple .js files
+ 
+ I haven't worked out classes yet
+ (I'm not sure it's even designed to be Object Oriented)
+ 
+ Apologies to anyone that has to read my first javascript project!
+ */
+
+
 // Get the html body
 var main = document.getElementById("main");
 
@@ -11,7 +22,7 @@ page[1].className = "pageDiv";
 
 // Some set values that make scaling up easy for the dev
 var stepsPerRow = 8;
-var numOfRows = 4;
+var numOfRows = 6;
 var numOfDrumSamples = 4;
 var ms = 750; // Default ms delay for clock.js (750ms = 20BPM)
 
@@ -19,12 +30,30 @@ var ms = 750; // Default ms delay for clock.js (750ms = 20BPM)
 var stepGroup = []; // A step group is a row of steps
 var step = []; // A step is a single unit of the sequencer (4 rows x 8 columns = 32 steps, but 4 steps will be played for each tick)
 
-//Arrays for all of the sliders - These get used across many .js files
+/*
+Arrays for all of the sliders -
+ 
+ **These could definitely be cleaned up, they
+ get used across some panels but not all which
+ makes things quite messy and hard to read and
+ expand. Also towards the end of the project I
+ discovered I could create an object containing
+ all of the elements necessary for one 'slider'
+ so these 5 arrays could be reduced to one
+*/
 var sliderContainers = [];
 var sliderTagDisplayBox = [];
 var sliderTag = [];
 var sliderDisplay = [];
 var sliders = [];
+
+/*
+ Each group on controls is placed on its own 'panel'
+ */
+var panel = [];
+
+var synthPanel = [];
+var synth = [];
 
 // This is the unique tag that every slider has
 var SliderEnum = {
@@ -47,7 +76,15 @@ var SliderEnum = {
     FM_MODENV_SUSTAIN: 13,
 }
 
-//This is the actual slider number that is associated with the property, some sliders are changed when a different type of step is selected
+/*
+ This is the slider as it appears on the screen -
+ e.g. slider 4 is occupied by both synth chance
+ and drum chance
+
+looking back it would have made more sense to
+just create unique sliders for each element and
+hide them or make them visible as required.
+ */
 var SliderDisplayEnum = {
     BPM : 0,
     DRUM_LEVEL : 1,

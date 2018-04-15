@@ -1,3 +1,7 @@
+/*
+ The stop/start button - behaviour should be self explanatory
+ */
+
 var startStopPanel = document.createElement("div");
 startStopPanel.className = "ControlPanel-SequenceTypes";
 

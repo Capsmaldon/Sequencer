@@ -1,11 +1,11 @@
-var synthPanel = [];
-var synth = [];
+/*
+ Panel that controls the sound of the synth - currently there are only attack, decay and sustain enabled
+ */
 
 for(var i = 0; i < numOfRows; ++i)
 {
     synth.push(new Tone.FMSynth());
     synth[i].mute = true;
-//    synth[i].modulation.type = "square";
     synth[i].toMaster();
     synth[i].modulationEnvelope.attack = 0.01;
 }
@@ -16,10 +16,18 @@ synthPanelContainer.className = "PanelRow-Horizontal";
 synthPanel.push(document.createElement("div"));
 synthPanel[0].className = "ControlPanel-Synth";
 
-synthPanel.push(document.createElement("div"));
-synthPanel[1].className = "ControlPanel-Synth";
+/*
+ Did originally contain another panel to control the
+ FM modulation envelope, but it was too subtle and
+ removed for simplicity - commented out incase
+ of later expansion
+ */
 
-for (var synthPanelNum = 0; synthPanelNum < 2; ++synthPanelNum)
+//synthPanel.push(document.createElement("div"));
+//synthPanel[1].className = "ControlPanel-Synth";
+
+//Create all the visual elements for the synth sliders and set defaults for each
+for (var synthPanelNum = 0; synthPanelNum < 1; ++synthPanelNum)
 {
     for(var i = 0; i < 3; ++i)
     {
@@ -57,12 +65,12 @@ sliderTag[4].innerHTML = "Attack";
 sliderTag[5].innerHTML = "Decay";
 sliderTag[6].innerHTML = "Sustain";
 
-sliderTag[7].innerHTML = "Attack";
-sliderTag[8].innerHTML = "Decay";
-sliderTag[9].innerHTML = "Sustain";
+//sliderTag[7].innerHTML = "Attack";
+//sliderTag[8].innerHTML = "Decay";
+//sliderTag[9].innerHTML = "Sustain";
 
 synthPanelContainer.appendChild(synthPanel[0]);
-synthPanelContainer.appendChild(synthPanel[1]);
+//synthPanelContainer.appendChild(synthPanel[1]);
 
 function synthSliderControl(event)
 {

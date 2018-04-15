@@ -1,5 +1,8 @@
-//Indicator setup
-var panel = [];
+/*
+ The indicator shows the user which step they are on,
+ it is made here but controlled in 'clock.js'
+ */
+
 panel.push(document.createElement("div"));
 panel[0].className = "PanelRow-Horizontal";
 

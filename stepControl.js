@@ -1,3 +1,14 @@
+/*
+ This is where all the sliders that control
+ the values of each note/drum are made
+ */
+
+/*
+ Create a higher level divider to store the
+ step controls in, this is to horizontally
+ align the transport panel with the step
+ control panel
+ */
 panel.push(document.createElement("div"));
 panel[2].className = "PanelColumn-Horizontal";
 
@@ -5,6 +16,10 @@ panel[2].className = "PanelColumn-Horizontal";
 var localPanel = document.createElement("div");
 localPanel.className = "ControlPanel-Local";
 
+/*
+ Create all the visual elements and push
+ them to their respective control panel
+ */
 for(var i = 0; i < 4; ++i)
 {
     
@@ -60,7 +75,7 @@ sliders[3].max = 100;
 sliders[3].value = step[0].drumChance;
 sliders[3].tag = SliderEnum.DRUM_CHANCE;
 
-//Slider change
+//Slider change - stores the slider data in the associated step
 function stepSliderControl(event)
 {
     switch(event.target.tag)
